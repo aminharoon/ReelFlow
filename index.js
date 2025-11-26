@@ -1,12 +1,12 @@
-const reelsSection = [
+let reelsSection = [
   {
     propilePicture:
       "https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D",
     userName: "travel_diaries",
     caption: "Sunset vibes hitting different 🌅✨",
-    likeCount: 1200,
+    likeCount: 12,
     commitCount: 85,
-    isLiked: true,
+    isLiked: false,
     videoUrl: "./videos/1.mp4",
     isFollowed: true
   },
@@ -112,74 +112,91 @@ const reelsSection = [
     isFollowed: false
   },
 ];
-let sum = "";
-reelsSection.forEach((user) => {
-  sum =
-    sum +
-    ` <div class="reelsParient">
+let ReelsCon = document.querySelector(".container");
+
+
+function displayReels() {
+  let sum = "";
+  reelsSection.forEach((user, id) => {
+    sum =
+      sum +
+      `  <div class="reelsParient">
           <div class="videoSec">
-          <video src="${user.videoUrl} " autoplay loop  playsinline></video>
+            <video id="${id}" src="${user.videoUrl}" autoplay loop  playsinline></video>
           </div>
           <div class="bottum">
             <div class="left">
-              <img
-                src="${user.propilePicture}"
-                alt=""
-              />
-              <p>@${user.userName}</p>
-              <button>${user.isFollowed ? "follow" : "unfollow"}</button>
+              <img src="${user.propilePicture}" alt="" />
+              <p>${user.userName}</p>
+              <button id="${id}" class="follow">${user.isFollowed ? "unfollow" : "follow"}</button>
             </div>
-            <p>
-             ${user.caption}
-            </p>
+            <p>${user.caption}</p>
           </div>
           <div class="icons">
-
-            <div class="like icon">
-             ${user.isLiked ? "<i class='ri-heart-fill red'></i>" : "<i class='ri-heart-line'></i>"}
+            <div  class="like icon">
+              <div id="${id}"  class="like">
+     ${user.isLiked ? "<i class='ri-heart-fill likeIcon red'></i> " : "  <i class='ri-heart-line likeIcon'></i>"}
+              </div>
               <span>${user.likeCount}</span>
             </div>
 
             <div class="chat icon">
-              <i class="ri-chat-1-line"></i>
+              <div class="chat">
+                <i class="ri-chat-1-line"></i>
+              </div>
               <span>${user.commitCount}</span>
             </div>
 
             <div class="share icon">
-             <i class="ri-share-forward-line"></i>
-
-            </div >
-             <div class="threeDot icon">
-             <i class="ri-more-2-line"></i>
-              </div>
-           
-          </div >
-        </div > `;
-});
-const section = document.querySelector("section");
-section.innerHTML = sum;
-const videos = document.querySelectorAll("video");
-// source for chatGPT {
-
-// Create observer
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const video = entry.target;
+              <i class="ri-share-forward-line"></i>
+            </div>
+            <div class="threeDot icon">
+              <i class="ri-more-2-line"></i>
+            </div>
+          </div>
+        </div> `
+      ;
 
 
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
-  },
-  {
-    threshold: 0.6, // 60% visible to start play
+  });
+
+  ReelsCon.innerHTML = sum;
+
+}
+displayReels()
+
+
+ReelsCon.addEventListener("click", (e) => {
+  let index = e.target.id
+
+
+  if (e.target.className == 'like') {
+    if (!reelsSection[index].isLiked) {
+
+      reelsSection[index].likeCount++
+      reelsSection[index].isLiked = true
+
+    }
+    else {
+      reelsSection[index].likeCount--
+      reelsSection[index].isLiked = false
+
+    }
+
+
+
   }
-);
+  if (e.target.className == "follow") {
+    if (!reelsSection[index].isFollowed) {
+      reelsSection[index].isFollowed = true
 
-// Observe all videos
-videos.forEach((video) => observer.observe(video));
-// }
+    }
+    else {
+      reelsSection[index].isFollowed = false
+
+    }
+
+  }
+  displayReels()
+
+})

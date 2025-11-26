@@ -18,8 +18,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  section {
-    height: 80%;
+  section,
+  .container {
+    height: 90%;
     width: 100%;
     background: black;
     margin: auto;
@@ -41,6 +42,7 @@ main {
         width: 100%;
         border-radius: 1.5rem;
         overflow: hidden;
+
         video {
           object-fit: cover;
           height: 100%;
@@ -78,11 +80,12 @@ main {
             outline: none;
             border-radius: 0.5rem;
             font-family: monospace;
-            font-weight: 600;
+            font-weight: 300;
             cursor: pointer;
             color: white;
-            font-variant: small-caps;
+
             letter-spacing: 1.3px;
+            cursor: pointer;
           }
         }
         p {
@@ -102,21 +105,30 @@ main {
         flex-direction: column;
         font-size: 1.5rem;
         font-weight: 100;
-        gap: 1.3rem;
+        gap: 1rem;
+        background: transparent !important;
         i {
           cursor: pointer;
+          pointer-events: none;
         }
-        .red {
-          color: red;
-        }
+
         .icon {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 0.1rem;
+
           span {
             font-size: 0.7rem;
+            pointer-events: none;
+          }
+          .like {
+            cursor: pointer;
+            .red {
+              color: red;
+              transition: color 1s linear;
+            }
           }
         }
 
@@ -130,7 +142,9 @@ main {
       }
     }
   }
-  section::-webkit-scrollbar {
+  .container::-webkit-scrollbar {
     display: none;
   }
+}
+.like {
 }
