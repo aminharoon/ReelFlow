@@ -34,21 +34,6 @@ bashgit clone https://github.com/aminharoon/reelsSec.git
 
 Navigate to the project directory
 
-bashcd reelsSec
-
-Open the proje
-
-📂 Project Structure
-reelsSec/
-├── index.html          # Main HTML file
-├── css/
-│   └── styles.scss     # SCSS stylesheet
-├── js/
-│   └── script.js       # JavaScript functionality
-├── assets/             # Images, videos, and media files
-└── README.md           # Project documentation
-💡 Usage
-
 Scrolling Through Reels: Use your mouse wheel or swipe gestures to navigate between reels
 Like/Unlike: Click the heart icon to like or unlike a reel
 Follow/Unfollow: Click the follow button to follow or unfollow content creators
