@@ -212,3 +212,4 @@ ReelsCon.addEventListener("click", (e) => {
   displayReels()
 
 })
+console.log("object");
