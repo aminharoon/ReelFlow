@@ -8,7 +8,8 @@ let reelsSection = [
     commitCount: 85,
     isLiked: false,
     videoUrl: "./videos/1.mp4",
-    isFollowed: true
+    isFollowed: true,
+    shareCount: 20
   },
   {
     propilePicture:
@@ -19,7 +20,8 @@ let reelsSection = [
     commitCount: 60,
     videoUrl: "./videos/2.mp4",
     isLiked: false,
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 26
   },
   {
     propilePicture:
@@ -30,7 +32,8 @@ let reelsSection = [
     commitCount: 140,
     isLiked: true,
     videoUrl: "./videos/3.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 45
   },
   {
     propilePicture:
@@ -41,7 +44,8 @@ let reelsSection = [
     commitCount: 110,
     isLiked: false,
     videoUrl: "./videos/4.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 70
   },
   {
     propilePicture:
@@ -52,7 +56,8 @@ let reelsSection = [
     commitCount: 150,
     isLiked: false,
     videoUrl: "./videos/5.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 10
   },
   {
     propilePicture:
@@ -63,7 +68,8 @@ let reelsSection = [
     commitCount: 210,
     isLiked: true,
     videoUrl: "./videos/6.mp4",
-    isFollowed: true
+    isFollowed: true,
+    shareCount: 2
   },
   {
     propilePicture:
@@ -74,7 +80,8 @@ let reelsSection = [
     commitCount: 75,
     isLiked: true,
     videoUrl: "./videos/7.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 900
   },
   {
     propilePicture:
@@ -86,7 +93,8 @@ let reelsSection = [
     isLiked: true,
 
     videoUrl: "./videos/8.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 200
   },
   {
     propilePicture:
@@ -98,7 +106,8 @@ let reelsSection = [
     isLiked: false,
 
     videoUrl: "./videos/9.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 852
   },
   {
     propilePicture:
@@ -109,7 +118,8 @@ let reelsSection = [
     commitCount: 90,
     isLiked: true,
     videoUrl: "./videos/10.mp4",
-    isFollowed: false
+    isFollowed: false,
+    shareCount: 741
   },
 ];
 let ReelsCon = document.querySelector(".container");
@@ -122,7 +132,7 @@ function displayReels() {
       sum +
       `  <div class="reelsParient">
           <div class="videoSec">
-            <video id="${id}" src="${user.videoUrl}" autoplay loop  playsinline></video>
+            <video id="${id}" src="${user.videoUrl}" autoplay loop muted playsinline></video>
           </div>
           <div class="bottum">
             <div class="left">
@@ -149,6 +159,7 @@ function displayReels() {
 
             <div class="share icon">
               <i class="ri-share-forward-line"></i>
+                 <span>${user.shareCount}</span>
             </div>
             <div class="threeDot icon">
               <i class="ri-more-2-line"></i>
@@ -197,6 +208,7 @@ ReelsCon.addEventListener("click", (e) => {
     }
 
   }
+
   displayReels()
 
 })
