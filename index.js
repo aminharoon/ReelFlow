@@ -9,7 +9,8 @@ let reelsSection = [
     isLiked: false,
     videoUrl: "./videos/1.mp4",
     isFollowed: true,
-    shareCount: 20
+    shareCount: 20,
+    isPlay: false
   },
   {
     propilePicture:
@@ -21,6 +22,7 @@ let reelsSection = [
     videoUrl: "./videos/2.mp4",
     isLiked: false,
     isFollowed: false,
+    isPlay: false,
     shareCount: 26
   },
   {
@@ -33,6 +35,7 @@ let reelsSection = [
     isLiked: true,
     videoUrl: "./videos/3.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 45
   },
   {
@@ -45,6 +48,7 @@ let reelsSection = [
     isLiked: false,
     videoUrl: "./videos/4.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 70
   },
   {
@@ -57,6 +61,7 @@ let reelsSection = [
     isLiked: false,
     videoUrl: "./videos/5.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 10
   },
   {
@@ -69,6 +74,7 @@ let reelsSection = [
     isLiked: true,
     videoUrl: "./videos/6.mp4",
     isFollowed: true,
+    isPlay: false,
     shareCount: 2
   },
   {
@@ -81,6 +87,7 @@ let reelsSection = [
     isLiked: true,
     videoUrl: "./videos/7.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 900
   },
   {
@@ -94,6 +101,7 @@ let reelsSection = [
 
     videoUrl: "./videos/8.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 200
   },
   {
@@ -107,6 +115,7 @@ let reelsSection = [
 
     videoUrl: "./videos/9.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 852
   },
   {
@@ -119,6 +128,7 @@ let reelsSection = [
     isLiked: true,
     videoUrl: "./videos/10.mp4",
     isFollowed: false,
+    isPlay: false,
     shareCount: 741
   },
 ];
@@ -132,7 +142,7 @@ function displayReels() {
       sum +
       `  <div class="reelsParient">
           <div class="videoSec">
-            <video id="${id}" src="${user.videoUrl}" autoplay loop muted playsinline></video>
+            <video id="${id}" src="${user.videoUrl}" autoplay muted loop  ></video>
           </div>
           <div class="bottum">
             <div class="left">
@@ -145,7 +155,7 @@ function displayReels() {
           <div class="icons">
             <div  class="like icon">
               <div id="${id}"  class="like">
-     ${user.isLiked ? "<i class='ri-heart-fill likeIcon red'></i> " : "  <i class='ri-heart-line likeIcon'></i>"}
+                  ${user.isLiked ? "<i class='ri-heart-fill likeIcon red'></i> " : "  <i class='ri-heart-line likeIcon'></i>"}
               </div>
               <span>${user.likeCount}</span>
             </div>
@@ -170,8 +180,8 @@ function displayReels() {
 
 
   });
-
   ReelsCon.innerHTML = sum;
+  controlVideos()
 
 }
 displayReels()
@@ -212,4 +222,19 @@ ReelsCon.addEventListener("click", (e) => {
   displayReels()
 
 })
-console.log("object");
+function controlVideos() {
+  const videos = document.querySelectorAll('video')
+  videos.forEach((vid) => {
+    vid.muted = true
+    vid.addEventListener("mouseleave", (v) => {
+      vid.setAttribute("muted", true)
+      vid.muted = true
+    })
+    vid.addEventListener("mouseenter", (v) => {
+      console.log(v.target);
+      vid.removeAttribute("muted")
+      vid.muted = false
+
+    })
+  })
+}
