@@ -1,66 +1,68 @@
-ReelFlow
+# ReelFlow
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/aminharoon/ReelFlow.git)
 
-A modern, interactive reels viewing experience with smooth snap scrolling and social engagement features
+ReelFlow is a modern, interactive video reels viewer built with vanilla JavaScript and SCSS. It provides a seamless, app-like experience with smooth snap-scrolling, dynamic video playback, and social engagement features like liking, following, and sharing.
 
-📝 Description
-ReelFlow is a dynamic video reels container that provides an immersive social media experience. Built with vanilla JavaScript and styled with SCSS, this project features smooth snap scrolling navigation, interactive engagement options (like/unlike), and social connectivity features (follow/unfollow). The application plays reels dynamically as users scroll through content, creating a seamless and engaging viewing experience similar to popular social media platforms.
-✨ Features
+## ✨ Features
 
-🎬 Dynamic Reel Playback - Automatically plays reels as users scroll through content
-📱 Snap Scrolling - Smooth, responsive snap-to-section scrolling for intuitive navigation
-❤️ Like/Unlike System - Interactive engagement with instant feedback
-👥 Follow/Unfollow - Social connectivity features to follow content creators
-🎨 Modern UI/UX - Clean, responsive design built with SCSS
-⚡ Lightweight - Built with vanilla JavaScript for optimal performance
+*   **🎬 Dynamic Reel Playback**: Videos automatically play in a muted loop as they scroll into view. Hover over a video to unmute it.
+*   **📱 Smooth Snap Scrolling**: Utilizes CSS Scroll Snap for a fluid, section-by-section vertical scrolling experience.
+*   **❤️ Interactive Engagement**: Like or unlike reels with a single click, with immediate visual feedback and updated like counts.
+*   **👥 Social Connectivity**: Follow and unfollow content creators with a simple button toggle.
+*   **🎨 Modern UI**: A clean, responsive design styled with SCSS that mimics popular social media platforms.
+*   **⚡ Lightweight & Performant**: Built with pure vanilla JavaScript, ensuring fast load times and optimal performance.
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-HTML5 - Semantic markup and structure
-SCSS - Advanced styling with variables, nesting, and mixins
-JavaScript (ES6+) - Dynamic functionality and interactivity
-CSS Snap Scrolling - Native smooth scrolling experience
+*   **HTML5**: Provides the semantic structure for the application.
+*   **SCSS/CSS3**: Used for advanced and organized styling, including variables, nesting, and a responsive layout.
+*   **JavaScript (ES6+)**: Powers all the dynamic functionality, including data rendering, event handling, and user interactions.
+*   **CSS Snap Scroll**: Implemented for the core vertical scrolling functionality, ensuring each reel snaps perfectly into the viewport.
+*   **Remix Icon**: For clean and scalable icons used in the UI.
 
-🚀 Getting Started
-Prerequisites
+## 🚀 Getting Started
 
-A modern web browser (Chrome, Firefox, Safari, Edge)
-Basic understanding of HTML, CSS, and JavaScript (for modifications)
+To get a local copy up and running, follow these simple steps.
 
-Installation
+### Prerequisites
 
-Clone the repository
+You only need a modern web browser that supports HTML5, CSS3, and JavaScript (e.g., Chrome, Firefox, Safari, Edge).
 
-bashgit clone https://github.com/aminharoon/reelsSec.git
+### Installation
 
-Navigate to the project directory
+1.  Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/aminharoon/ReelFlow.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd ReelFlow
+    ```
+3.  Open the `index.html` file in your web browser.
 
-Scrolling Through Reels: Use your mouse wheel or swipe gestures to navigate between reels
-Like/Unlike: Click the heart icon to like or unlike a reel
-Follow/Unfollow: Click the follow button to follow or unfollow content creators
-Auto-play: Reels automatically play when they come into view
+## 🎯 How to Use
 
-🎯 Key Features Explained
-Snap Scrolling
-The container uses CSS scroll-snap properties to ensure each reel perfectly aligns in the viewport, creating a smooth, app-like experience.
-Dynamic Playback
-JavaScript event listeners detect when a reel enters the viewport and automatically trigger playback, pausing when scrolled away.
-Interactive Engagement
-Real-time visual feedback for all user interactions including likes, follows, and other engagement metrics.
-🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+*   **Scroll Reels**: Use your mouse wheel or swipe gestures (on touch devices) to navigate vertically between video reels.
+*   **Like/Unlike**: Click the heart icon on the right side of a reel to toggle your like. The icon will fill with red, and the count will update instantly.
+*   **Follow/Unfollow**: Click the `follow` or `unfollow` button next to the creator's username.
+*   **Mute/Unmute**: Videos are muted by default. Hover your mouse over a video to unmute it and hear the audio. Move the mouse away to mute it again.
 
-Fork the project
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+## 🤝 Contributing
 
-📜 License
-This project is open source and available under the MIT License.
-👤 Author
-Amin Haroon
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
 
-GitHub: @aminharoon
+1.  Fork the Project.
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the Branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
 
-🌟 Show Your Support
-Give a ⭐️ if this project helped you or if you found it interesting!
+
+
+## 👤 Author
+
+**Amin Haroon**
+
+*   GitHub: [@aminharoon](https://github.com/aminharoon)
+
+🌟 Give a ⭐️ if you find this project interesting
